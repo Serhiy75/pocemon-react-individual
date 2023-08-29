@@ -13,3 +13,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+.pocemon-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: start;
+  border: 2px solid black;
+  gap: 10px;
+}
+
+.pocemon-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid grey;
+  border-radius: 10px;
+  font-size: 24px;
+  width: 250px;
+  height: 200px;
+}
