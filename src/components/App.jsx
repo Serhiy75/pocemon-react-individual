@@ -10,21 +10,11 @@ export const App = () => {
   useEffect(() => {
     if (pocemons.length) return;
     getPokemons().then(pocemons => {
-      console.log(pocemons);
       setPocemons(pocemons);
     });
   });
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
+    <div>
       <PocemonList pocemons={pocemons} />
     </div>
   );

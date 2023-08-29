@@ -19,6 +19,7 @@ export function getPokemons() {
       return res.map(pok => pok.data); //повертаєм після мапа дата(покемон)
     });
 }
+
 export function getUrlPokemons(url) {
   return axios.get(url).then(res => res.data);
 }
