@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/pocemon-react-individual/static/css/main.7acaea2f.css",
+    "main.js": "/pocemon-react-individual/static/js/main.07d3183d.js",
+    "index.html": "/pocemon-react-individual/index.html",
+    "main.7acaea2f.css.map": "/pocemon-react-individual/static/css/main.7acaea2f.css.map",
+    "main.07d3183d.js.map": "/pocemon-react-individual/static/js/main.07d3183d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.07d3183d.js"
+  ]
+}
