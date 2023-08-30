@@ -21,7 +21,7 @@ li {
 .pocemon-list {
   display: flex;
   flex-wrap: wrap;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   border: 2px solid black;
   gap: 15px;
