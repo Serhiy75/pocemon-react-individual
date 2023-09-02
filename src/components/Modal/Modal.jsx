@@ -12,10 +12,10 @@ export const Modal = ({ handleClick, children }) => {
   }, [handleClick]);
   return (
     <div className="Overlay">
-      <div className="Modal">
-        <button onClick={handleClick}>close modal</button>
-        {children}
-      </div>
+      <div className="Modal">{children}</div>
+      <button className="button" onClick={handleClick}>
+        X
+      </button>
     </div>
   );
 };
