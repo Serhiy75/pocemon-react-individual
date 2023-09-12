@@ -1,20 +1,19 @@
-import { useEffect, useState } from 'react';
-import { getPokemons } from '../services/pocemonApi';
-import { PocemonList } from './PocemonLIst/PocemonList';
+import { Route, Routes } from 'react-router-dom';
+import { Header } from './Header';
+import Home from 'pages/Home';
+import Heroes from 'pages/Heroes';
+import Pocemons from 'pages/Pocemons';
+import Movies from 'pages/Movies';
 
 export const App = () => {
-  const [pocemons, setPocemons] = useState([]);
-
-  useEffect(() => {
-    if (pocemons.length) return;
-    getPokemons().then(pocemons => {
-      setPocemons(pocemons);
-    });
-  });
-
   return (
-    <div>
-      <PocemonList pocemons={pocemons} />
-    </div>
+    <Routes>
+      <Route path="/" element={<Header />}>
+        <Route index element={<Home />} />
+        <Route path="/heroes" element={<Heroes />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/pocemons" element={<Pocemons />} />
+      </Route>
+    </Routes>
   );
 };
