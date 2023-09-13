@@ -3,7 +3,7 @@ import React from 'react';
 import css from './HeroList.module.css';
 
 export const HeroList = ({ heroes }) => {
-  console.log(heroes);
+  // console.log(heroes);
   return (
     <>
       <ul className={css.herolist}>

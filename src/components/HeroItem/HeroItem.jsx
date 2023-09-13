@@ -4,6 +4,7 @@ import { useState } from 'react';
 import css from './HeroItem.module.css';
 
 export const HeroItem = ({ hero }) => {
+  // console.log(hero);
   const [toggleModal, setToggleModal] = useState(false);
   const handleClick = () => {
     setToggleModal(prevState => !prevState);

@@ -11,13 +11,13 @@ export const Header = () => {
               <NavLink to="/">Home</NavLink>
             </li>
             <li>
+              <NavLink to="/pocemons">Pocemons</NavLink>
+            </li>
+            <li>
               <NavLink to="/heroes">Heroes</NavLink>
             </li>
             <li>
-              <NavLink to="/movies">Movies</NavLink>
-            </li>
-            <li>
-              <NavLink to="/pocemons">Pocemons</NavLink>
+              <NavLink to="/trending_movies">Trending Movies</NavLink>
             </li>
           </ul>
         </nav>

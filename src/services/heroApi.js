@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-export function getHero() {
+export function getHero(page) {
   const BASE_URL = 'https://superhero-search.p.rapidapi.com/api/';
-  const END_POINT = 'heroes';
-  // const PARAMS = new URLSearchParams({ hero: hero });
-  const url = BASE_URL + END_POINT;
+  const END_POINT = 'heroes?';
+  const PARAMS = new URLSearchParams({ page });
+  const url = BASE_URL + END_POINT + PARAMS;
   return axios
     .get(url, {
       headers: {
