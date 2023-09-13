@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/pocemon-react-individual/static/css/main.6d962497.css",
-    "main.js": "/pocemon-react-individual/static/js/main.be031ab3.js",
+    "main.css": "/pocemon-react-individual/static/css/main.551cf457.css",
+    "main.js": "/pocemon-react-individual/static/js/main.5836520a.js",
     "index.html": "/pocemon-react-individual/index.html",
-    "main.6d962497.css.map": "/pocemon-react-individual/static/css/main.6d962497.css.map",
-    "main.be031ab3.js.map": "/pocemon-react-individual/static/js/main.be031ab3.js.map"
+    "main.551cf457.css.map": "/pocemon-react-individual/static/css/main.551cf457.css.map",
+    "main.5836520a.js.map": "/pocemon-react-individual/static/js/main.5836520a.js.map"
   },
   "entrypoints": [
-    "static/css/main.6d962497.css",
-    "static/js/main.be031ab3.js"
+    "static/css/main.551cf457.css",
+    "static/js/main.5836520a.js"
   ]
 }
