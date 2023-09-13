@@ -1,0 +1,19 @@
+.heroitem {
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid grey;
+  border-radius: 8px;
+  width: 250px;
+  height: 300px;
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+.imgitem {
+  width: 250px;
+  height: 275px;
+  margin-bottom: 10px;
+}

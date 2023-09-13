@@ -1,0 +1,27 @@
+.details {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: black;
+  overflow: hidden;
+}
+.imgdetaile {
+  height: 500px;
+  width: 500px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.name {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 10px;
+}
+.fullName {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+}
+.publisher {
+  margin: 10px 0;
+}
