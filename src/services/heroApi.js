@@ -16,8 +16,6 @@ export function getHero() {
     .then(res => res.data);
 }
 
-// import axios from 'axios';
-
 // const options = {
 //   method: 'GET',
 //   url: 'https://superhero-search.p.rapidapi.com/api/',
