@@ -1,6 +1,7 @@
 import { Suspense, useEffect, useRef, useState } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import { getMovieDetails } from 'services/moviesApi';
+import css from '../pages/MovieDetailes.module.css';
 const defaultImg =
   'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
 
@@ -13,20 +14,20 @@ const MovieDetailes = () => {
   useEffect(() => {
     getMovieDetails(movieId).then(data => {
       setMovie(data);
-      // console.log(data);
+      console.log(data);
     });
   }, [movieId]);
   if (!movie) return;
 
   return (
-    <div className="movie-search">
-      <Link to={backLink.current} className="back">
+    <div className={css.moviesearch}>
+      <Link to={backLink.current} className={css.back}>
         Go Back
       </Link>
       <hr />
-      <div className="title">
+      <div className={css.title}>
         <img
-          className="img"
+          className={css.img}
           src={
             movie.poster_path
               ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
@@ -35,7 +36,7 @@ const MovieDetailes = () => {
           alt={movie.title}
           width="300px"
         />
-        <div className="paragraf">
+        <div className={css.paragraf}>
           <h2>{movie.title}</h2>
           <p>Overview: {movie.overview}</p>
           <p>Genres: {movie.genres.map(el => el.name).join(',')}</p>
@@ -48,6 +49,7 @@ const MovieDetailes = () => {
             {movie.production_countries.map(el => el.name).join(',')}
           </p>
           <p>Popularity: {movie.popularity}</p>
+          <p>Release Date: {movie.release_date}</p>
         </div>
       </div>
 
