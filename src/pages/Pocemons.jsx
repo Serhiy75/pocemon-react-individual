@@ -1,4 +1,4 @@
-import { PocemonList } from 'components/PocemonLIst/PocemonList';
+import { PocemonList } from 'components/Pocemon/PocemonLIst/PocemonList';
 import { useEffect, useState } from 'react';
 import { getPokemons } from 'services/pocemonApi';
 

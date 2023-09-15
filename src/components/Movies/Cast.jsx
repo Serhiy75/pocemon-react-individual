@@ -7,10 +7,10 @@ const defaultImg =
 
 const Cast = () => {
   const [creditCast, setCreditCast] = useState('');
-  const id = useParams();
+  const { movieId } = useParams();
   useEffect(() => {
-    getMovieCast(id).then(setCreditCast);
-  }, [id]);
+    getMovieCast(movieId).then(setCreditCast);
+  }, [movieId]);
   return (
     <>
       {creditCast.length === 0 ? (

@@ -1,4 +1,4 @@
-import { HeroItem } from 'components/HeroItem/HeroItem';
+import { HeroItem } from 'components/Heroes/HeroItem/HeroItem';
 import React from 'react';
 import css from './HeroList.module.css';
 

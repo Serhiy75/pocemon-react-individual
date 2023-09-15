@@ -1,4 +1,4 @@
-import { PocemonItem } from 'components/PocemonListItem/PocemonListItem';
+import { PocemonItem } from 'components/Pocemon/PocemonListItem/PocemonListItem';
 import React from 'react';
 
 export const PocemonList = ({ pocemons }) => {

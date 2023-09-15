@@ -4,13 +4,13 @@ import { getMovieReviews } from 'services/moviesApi';
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
-  const { id } = useParams();
+  const { movieId } = useParams();
 
   useEffect(() => {
-    getMovieReviews(id).then(reviews => {
+    getMovieReviews(movieId).then(reviews => {
       setReviews(reviews.results);
     });
-  }, [id]);
+  }, [movieId]);
 
   return (
     <>

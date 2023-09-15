@@ -1,4 +1,4 @@
-import { HeroList } from 'components/HeroList/HeroList';
+import { HeroList } from 'components/Heroes/HeroList/HeroList';
 import { ScrollToTop } from 'components/ScrollToTop/ScrollToTop';
 import { useEffect, useState } from 'react';
 import { getHero } from 'services/heroApi';

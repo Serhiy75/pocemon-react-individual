@@ -1,5 +1,5 @@
 import { Modal } from 'components/Modal/Modal';
-import { PocemonDetaile } from 'components/PocemonDetaile/PocemonDetaile';
+import { PocemonDetaile } from 'components/Pocemon/PocemonDetaile/PocemonDetaile';
 import { useState } from 'react';
 
 export const PocemonItem = ({ pocemon }) => {

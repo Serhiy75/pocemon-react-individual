@@ -1,4 +1,4 @@
-export const SearchMovie = ({ onSubmit }) => {
+export const MovieForm = ({ onSubmit }) => {
   const handleSubmit = event => {
     event.preventDefault();
     const { value } = event.target.elements.query;

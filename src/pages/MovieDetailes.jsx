@@ -14,7 +14,6 @@ const MovieDetailes = () => {
   useEffect(() => {
     getMovieDetails(movieId).then(data => {
       setMovie(data);
-      console.log(data);
     });
   }, [movieId]);
   if (!movie) return;

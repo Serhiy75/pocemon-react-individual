@@ -1,4 +1,4 @@
-import { HeroDetaile } from 'components/HeroDetaile/HeroDetaile';
+import { HeroDetaile } from 'components/Heroes/HeroDetaile/HeroDetaile';
 import { Modal } from 'components/Modal/Modal';
 import { useState } from 'react';
 import css from './HeroItem.module.css';
