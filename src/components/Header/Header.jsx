@@ -1,12 +1,20 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { DiRuby } from 'react-icons/di';
-import { Item, List, Navigation, StyledLink, Text } from './Header.styled';
+import {
+  Indicator,
+  Item,
+  List,
+  Navigation,
+  StyledHeader,
+  StyledLink,
+  Text,
+} from './Header.styled';
 
 export const Header = () => {
   return (
     <>
-      <header>
+      <StyledHeader>
         <Navigation>
           <List>
             <Item>
@@ -34,9 +42,10 @@ export const Header = () => {
                 <Text>Movies</Text>
               </StyledLink>
             </Item>
+            <Indicator />
           </List>
         </Navigation>
-      </header>
+      </StyledHeader>
       <Suspense fallback={<p>Loading...</p>}>
         <Outlet />
       </Suspense>

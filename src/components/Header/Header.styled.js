@@ -1,10 +1,15 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+export const StyledHeader = styled.header`
+  padding: 70px;
+  background-color: black;
+`;
+
 export const Navigation = styled.nav`
-  width: 300px;
+  width: 400px;
   height: 70px;
-  background-color: lightgreen;
+  background-color: lightsalmon;
   position: relative;
   margin: 0 auto;
   border-radius: 10px;
@@ -51,6 +56,13 @@ export const StyledLink = styled(NavLink)`
     opacity: 1;
     transform: translateY(10px);
   }
+  &.active span {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+  &.active svg {
+    transform: translateY(-35px);
+  }
 `;
 
 export const Text = styled.span`
@@ -62,3 +74,38 @@ export const Text = styled.span`
   opacity: 0;
   transform: translateY(20px);
 `;
+export const Indicator = styled.div`
+  background-color: lightcoral;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: -55%;
+  border-radius: 50%;
+  border: 6px solid black;
+  left: 5px;
+  transition: 0.5s;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 46%;
+    left: -22px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 0px -10px 0 0 black;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 46%;
+    right: -22px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-top-left-radius: 20px;
+    box-shadow: 0px -10px 0 0 black;
+  }
+`;
+
+// ${({ active }) => active}
