@@ -2,12 +2,14 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const StyledHeader = styled.header`
+  display: flex;
   padding: 70px;
   background-color: black;
 `;
 
 export const Navigation = styled.nav`
-  width: 400px;
+  display: inline-flex;
+  padding: 0 25px;
   height: 70px;
   background-color: lightsalmon;
   position: relative;
@@ -17,8 +19,6 @@ export const Navigation = styled.nav`
 
 export const List = styled.ul`
   display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -31,6 +31,18 @@ export const Item = styled.li`
   z-index: 1;
   width: 70px;
   height: 70px;
+  &:nth-child(1):has(.active) ~ div {
+    transform: translateX(calc(70px * 0));
+  }
+  &:nth-child(2):has(.active) ~ div {
+    transform: translateX(calc(70px * 1));
+  }
+  &:nth-child(3):has(.active) ~ div {
+    transform: translateX(calc(70px * 2));
+  }
+  &:nth-child(4):has(.active) ~ div {
+    transform: translateX(calc(70px * 3));
+  }
 `;
 
 export const StyledLink = styled(NavLink)`
@@ -49,19 +61,16 @@ export const StyledLink = styled(NavLink)`
     text-align: center;
     transition: 0.5s;
   }
-  &:hover svg {
+  &:hover svg,
+  &:focus svg,
+  &.active svg {
     transform: translateY(-35px);
   }
-  &:hover span {
-    opacity: 1;
-    transform: translateY(10px);
-  }
+  &:hover span,
+  &:focus span,
   &.active span {
     opacity: 1;
     transform: translateY(10px);
-  }
-  &.active svg {
-    transform: translateY(-35px);
   }
 `;
 
@@ -79,10 +88,9 @@ export const Indicator = styled.div`
   width: 70px;
   height: 70px;
   position: absolute;
-  top: -55%;
+  top: -50%;
   border-radius: 50%;
   border: 6px solid black;
-  left: 5px;
   transition: 0.5s;
   &::before {
     content: '';
