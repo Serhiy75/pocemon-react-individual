@@ -1,4 +1,4 @@
-import { MovieForm } from 'components/Movies/MovieForm';
+import { SearchForm } from 'components/SearchForm';
 import { MoviesList } from 'components/Movies/MoviesList';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
@@ -21,7 +21,7 @@ const SearchMovies = () => {
   };
   return (
     <>
-      <MovieForm onSubmit={handleSubmit} />
+      <SearchForm onSubmit={handleSubmit} />
       <MoviesList movies={movies} />
     </>
   );

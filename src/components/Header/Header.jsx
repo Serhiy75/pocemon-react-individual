@@ -1,6 +1,10 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { DiRuby } from 'react-icons/di';
+import { BiCameraMovie } from 'react-icons/bi';
+import { HiOutlineHomeModern } from 'react-icons/hi2';
+import { GiNinjaHeroicStance, GiAnimalHide } from 'react-icons/gi';
+import { TfiGallery } from 'react-icons/tfi';
+
 import {
   Indicator,
   Item,
@@ -19,30 +23,36 @@ export const Header = () => {
           <List>
             <Item>
               <StyledLink to="/">
-                <DiRuby />
+                <HiOutlineHomeModern />
                 <Text>Home</Text>
               </StyledLink>
             </Item>
             <Item>
               <StyledLink to="/pocemons">
-                <DiRuby />
+                <GiAnimalHide />
                 <Text>Pocemons</Text>
               </StyledLink>
             </Item>
             <Item>
               <StyledLink to="/heroes">
-                <DiRuby />
+                <GiNinjaHeroicStance />
                 <Text>Heroes</Text>
               </StyledLink>
             </Item>
+            <Item>
+              <StyledLink to="/gallery">
+                <TfiGallery />
 
+                <Text>Gallery</Text>
+              </StyledLink>
+            </Item>
             <Item>
               <StyledLink to="/movies">
-                <DiRuby />
+                <BiCameraMovie />
                 <Text>Movies</Text>
               </StyledLink>
             </Item>
-            <Indicator />
+            <Indicator className="indicator" />
           </List>
         </Navigation>
       </StyledHeader>

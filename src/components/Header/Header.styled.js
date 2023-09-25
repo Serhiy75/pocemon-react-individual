@@ -11,7 +11,7 @@ export const Navigation = styled.nav`
   display: inline-flex;
   padding: 0 25px;
   height: 70px;
-  background-color: lightsalmon;
+  background-color: #277fcf;
   position: relative;
   margin: 0 auto;
   border-radius: 10px;
@@ -43,6 +43,9 @@ export const Item = styled.li`
   &:nth-child(4):has(.active) ~ div {
     transform: translateX(calc(70px * 3));
   }
+  &:nth-child(5):has(.active) ~ div {
+    transform: translateX(calc(70px * 4));
+  }
 `;
 
 export const StyledLink = styled(NavLink)`
@@ -60,6 +63,9 @@ export const StyledLink = styled(NavLink)`
     font-size: 1.5em;
     text-align: center;
     transition: 0.5s;
+  }
+  &.active {
+    color: fuchsia;
   }
   &:hover svg,
   &:focus svg,
@@ -84,7 +90,7 @@ export const Text = styled.span`
   transform: translateY(20px);
 `;
 export const Indicator = styled.div`
-  background-color: lightcoral;
+  background-color: #70c9ba;
   width: 70px;
   height: 70px;
   position: absolute;
