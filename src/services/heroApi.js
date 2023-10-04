@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export function getHero(page) {
+export async function getHero(page) {
   const BASE_URL = 'https://superhero-search.p.rapidapi.com/api/';
   const END_POINT = 'heroes?';
   const PARAMS = new URLSearchParams({ page });
@@ -8,7 +8,7 @@ export function getHero(page) {
   return axios
     .get(url, {
       headers: {
-        'X-RapidAPI-Key': '9b3ff61931msh1b42d77d34e33dap1c29cajsn3d3169e0e2f4',
+        'X-RapidAPI-Key': 'a83342e2c2mshe07c3ac492c25eap166eecjsn232a9f9ebf48',
         'X-RapidAPI-Host': 'superhero-search.p.rapidapi.com',
       },
     })

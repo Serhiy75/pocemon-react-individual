@@ -1,6 +1,8 @@
+import { Overlay } from 'components/Overlay/Overlay.styled';
 import { useEffect } from 'react';
+import { ModalStyled } from './Modal.styled';
 
-export const Modal = ({ handleClick, children }) => {
+export const Modal = ({ handleClick, children, height }) => {
   useEffect(() => {
     const handlePressKey = event => {
       if (event.code === 'Escape') {
@@ -18,11 +20,11 @@ export const Modal = ({ handleClick, children }) => {
   };
 
   return (
-    <div className="Overlay" onClick={handleOverlayClick}>
-      <div className="Modal">{children}</div>
-      <button className="button" onClick={handleClick}>
+    <Overlay onClick={handleOverlayClick}>
+      <ModalStyled height={height}>{children}</ModalStyled>
+      {/* <button className="button" onClick={handleClick}>
         X
-      </button>
-    </div>
+      </button> */}
+    </Overlay>
   );
 };

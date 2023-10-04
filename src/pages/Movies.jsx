@@ -1,15 +1,14 @@
+import { Section } from 'components/Section/Section';
 import { lazy } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-// import SearchMovies from './SearchMovies';
-// import TrendingMovies from 'pages/TrendingMovies';
 
 const TrendingMovies = lazy(() => import('pages/TrendingMovies'));
 const SearchMovies = lazy(() => import('pages/SearchMovies'));
 
 const Movies = () => {
   return (
-    <>
+    <Section>
       <Tabs>
         <TabList>
           <Tab>Trending Movies</Tab>
@@ -22,7 +21,7 @@ const Movies = () => {
           <SearchMovies />
         </TabPanel>
       </Tabs>
-    </>
+    </Section>
   );
 };
 

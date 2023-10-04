@@ -14,7 +14,7 @@ export const PocemonItem = ({ pocemon }) => {
         {pocemon.name} {pocemon.id}
       </li>
       {toggleModal && (
-        <Modal handleClick={handleClick}>
+        <Modal handleClick={handleClick} height={'70vh'}>
           <PocemonDetaile detaile={pocemon} />
         </Modal>
       )}

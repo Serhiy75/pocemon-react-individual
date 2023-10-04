@@ -1,9 +1,9 @@
+import { Overlay } from 'components/Overlay/Overlay.styled';
 import { RotatingLines } from 'react-loader-spinner';
-import { LoaderDiv } from './Loader.styled';
 
 export const Loader = () => {
   return (
-    <LoaderDiv>
+    <Overlay>
       <RotatingLines
         strokeColor="#3f51b5"
         strokeWidth="5"
@@ -11,6 +11,6 @@ export const Loader = () => {
         width="96"
         visible={true}
       />
-    </LoaderDiv>
+    </Overlay>
   );
 };

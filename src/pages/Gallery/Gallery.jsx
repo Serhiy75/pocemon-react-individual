@@ -1,12 +1,14 @@
 import Notiflix from 'notiflix';
 import { useEffect, useState } from 'react';
 import { fetchImages } from 'services/galleryApi';
-import { AppDiv } from './Gallery.styled';
-import { SearchForm } from 'components/SearchForm';
-import { ImageGallery } from 'components/Gallery/ImageGallery/ImageGallery';
-import { Loader } from 'components/Loader/Loader';
-import { Button } from 'components/Button/Button';
-import { Modal } from 'components/Modal/Modal';
+import {
+  Button,
+  ImageGallery,
+  Loader,
+  Modal,
+  SearchForm,
+  Section,
+} from 'components';
 
 const Gallery = () => {
   const [images, setImages] = useState([]);
@@ -53,17 +55,17 @@ const Gallery = () => {
   };
 
   return (
-    <AppDiv>
+    <Section>
       <SearchForm onSubmit={handleSubmit} />
       <ImageGallery images={images} openModal={openModal} />
       {isLoading && <Loader />}
       {loadMore && <Button onClick={changePage} />}
       {isModalOpen && (
-        <Modal handleClick={openModal}>
-          <img src={dataModal.image} width="70%" alt={dataModal.alt} />
+        <Modal handleClick={openModal} height={'auto'}>
+          <img src={dataModal.image} alt={dataModal.alt} />
         </Modal>
       )}
-    </AppDiv>
+    </Section>
   );
 };
 
