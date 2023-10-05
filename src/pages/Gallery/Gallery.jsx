@@ -9,6 +9,7 @@ import {
   SearchForm,
   Section,
 } from 'components';
+import { ScrollToTop } from 'components/ScrollToTop/ScrollToTop';
 
 const Gallery = () => {
   const [images, setImages] = useState([]);
@@ -55,17 +56,20 @@ const Gallery = () => {
   };
 
   return (
-    <Section>
-      <SearchForm onSubmit={handleSubmit} />
-      <ImageGallery images={images} openModal={openModal} />
-      {isLoading && <Loader />}
-      {loadMore && <Button onClick={changePage} />}
-      {isModalOpen && (
-        <Modal handleClick={openModal} height={'auto'}>
-          <img src={dataModal.image} alt={dataModal.alt} />
-        </Modal>
-      )}
-    </Section>
+    <>
+      <Section>
+        <SearchForm onSubmit={handleSubmit} />
+        <ImageGallery images={images} openModal={openModal} />
+        {isLoading && <Loader />}
+        {loadMore && <Button onClick={changePage} />}
+        {isModalOpen && (
+          <Modal handleClick={openModal} height={'auto'}>
+            <img src={dataModal.image} alt={dataModal.alt} />
+          </Modal>
+        )}
+      </Section>
+      <ScrollToTop />
+    </>
   );
 };
 

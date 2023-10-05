@@ -33,10 +33,16 @@ export const ScrollToTop = () => {
             border: 'none',
             background: 'transparent',
             cursor: 'pointer',
+            transform: 'rotate(220deg)',
           }}
           onClick={goToTop}
         >
-          <IconContext.Provider value={{ color: 'green', size: '40px' }}>
+          <IconContext.Provider
+            value={{
+              color: 'green',
+              size: '40px',
+            }}
+          >
             <DiRuby />
           </IconContext.Provider>
         </button>

@@ -14,8 +14,13 @@ import {
   StyledLink,
   Text,
 } from './Header.styled';
+import { useSelector } from 'react-redux';
+import { selectIsLogin } from 'redux/auth/selector';
+import { UserMenu } from 'components/UserMenu/UserMenu';
 
 export const Header = () => {
+  const isLoggedIn = useSelector(selectIsLogin);
+  console.log(isLoggedIn);
   return (
     <>
       <StyledHeader>
@@ -25,6 +30,18 @@ export const Header = () => {
               <StyledLink to="/">
                 <HiOutlineHomeModern />
                 <Text>Home</Text>
+              </StyledLink>
+            </Item>
+            <Item>
+              <StyledLink to="/register">
+                <HiOutlineHomeModern />
+                <Text>Register</Text>
+              </StyledLink>
+            </Item>
+            <Item>
+              <StyledLink to="/login">
+                <HiOutlineHomeModern />
+                <Text>Login</Text>
               </StyledLink>
             </Item>
             <Item>
@@ -55,6 +72,7 @@ export const Header = () => {
             <Indicator className="indicator" />
           </List>
         </Navigation>
+        {isLoggedIn && <UserMenu />}
       </StyledHeader>
       <Suspense fallback={<p>Loading...</p>}>
         <Outlet />

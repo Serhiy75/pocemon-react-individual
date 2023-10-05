@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 export const StyledHeader = styled.header`
   display: flex;
   padding: 40px;
-  background-color: black;
+  background-color: #00ff8a;
 `;
 
 export const Navigation = styled.nav`
@@ -96,7 +96,7 @@ export const Indicator = styled.div`
   position: absolute;
   top: -50%;
   border-radius: 50%;
-  border: 6px solid black;
+  border: 6px solid #00ff8a;
   transition: 0.5s;
   &::before {
     content: '';
@@ -107,7 +107,7 @@ export const Indicator = styled.div`
     height: 20px;
     background-color: transparent;
     border-top-right-radius: 20px;
-    box-shadow: 0px -10px 0 0 black;
+    box-shadow: 0px -10px 0 0 #00ff8a;
   }
   &::after {
     content: '';
@@ -118,7 +118,7 @@ export const Indicator = styled.div`
     height: 20px;
     background-color: transparent;
     border-top-left-radius: 20px;
-    box-shadow: 0px -10px 0 0 black;
+    box-shadow: 0px -10px 0 0 #00ff8a;
   }
 `;
 
