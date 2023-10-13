@@ -5,6 +5,7 @@ import Cast from './Movies/Cast';
 import Reviews from './Movies/Reviews';
 import { useDispatch } from 'react-redux';
 import { refreshUser } from 'redux/auth/operation';
+// import { Loader } from './Loader/Loader';
 
 // import Home from 'pages/Home';
 // import Heroes from 'pages/Heroes';
@@ -27,20 +28,22 @@ export const App = () => {
     dispatch(refreshUser());
   }, [dispatch]);
   return (
-    <Routes>
-      <Route path="/" element={<Header />}>
-        <Route index element={<Home />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/heroes" element={<Heroes />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/movies/:movieId" element={<MovieDetailes />}>
-          <Route path="cast" element={<Cast />} />
-          <Route path="reviews" element={<Reviews />} />
+    <>
+      <Routes>
+        <Route path="/" element={<Header />}>
+          <Route index element={<Home />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/heroes" element={<Heroes />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/movies/:movieId" element={<MovieDetailes />}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+          <Route path="/pocemons" element={<Pocemons />} />
         </Route>
-        <Route path="/pocemons" element={<Pocemons />} />
-      </Route>
-    </Routes>
+      </Routes>
+    </>
   );
 };

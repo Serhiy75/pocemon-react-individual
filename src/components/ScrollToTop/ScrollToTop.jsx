@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { IconContext } from 'react-icons';
 import { DiRuby } from 'react-icons/di';
+import { ScrollButton } from './ScrollToTop.styled';
 
 export const ScrollToTop = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
@@ -25,27 +26,12 @@ export const ScrollToTop = () => {
   return (
     <>
       {showTopBtn && (
-        <button
-          style={{
-            position: 'fixed',
-            right: '30px',
-            bottom: '30px',
-            border: 'none',
-            background: 'transparent',
-            cursor: 'pointer',
-            transform: 'rotate(220deg)',
-          }}
-          onClick={goToTop}
-        >
-          <IconContext.Provider
-            value={{
-              color: 'green',
-              size: '40px',
-            }}
-          >
+        <ScrollButton onClick={goToTop}>
+          <IconContext.Provider value={{}}>
             <DiRuby />
           </IconContext.Provider>
-        </button>
+          <span> To Top</span>
+        </ScrollButton>
       )}
     </>
   );

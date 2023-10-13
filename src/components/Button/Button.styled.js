@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
 export const ButtonClass = styled.button`
+  display: flex;
+  text-align: center;
+  color: #fff;
+  border: 0;
   margin-left: auto;
   margin-right: auto;
   padding: 8px 16px;
   border-radius: 8px;
   background-color: #3f51b5;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  text-align: center;
-  display: inline-block;
-  color: #fff;
-  border: 0;
   text-decoration: none;
   cursor: pointer;
   font-family: inherit;
@@ -21,8 +21,15 @@ export const ButtonClass = styled.button`
   max-width: 160px;
   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
     0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-  &:hover,
-  &:focus {
-    background-color: #303f9f;
+  transition: all 0.3s ease-in-out;
+  &.active {
+    background-color: #3470ff;
+    color: yellow;
+  }
+  &:hover {
+    scale: 1.1;
+    color: red;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2),
+      0px 1px 5px 0px rgba(0, 0, 0, 0.14), 0px 2px 5px -1px rgba(0, 0, 0, 0.12);
   }
 `;

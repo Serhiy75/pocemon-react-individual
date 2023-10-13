@@ -1,4 +1,4 @@
-export * from 'components/SearchForm';
+export * from 'components/SearchForm/SearchForm';
 export * from 'components/Gallery/ImageGallery/ImageGallery';
 export * from 'components/Loader/Loader';
 export * from 'components/Modal/Modal';

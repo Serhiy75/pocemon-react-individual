@@ -10,6 +10,8 @@ import {
   Section,
 } from 'components';
 import { ScrollToTop } from 'components/ScrollToTop/ScrollToTop';
+import { AppDiv } from './Gallery.styled';
+import { NotFound } from 'components/NotFound/NotFound';
 
 const Gallery = () => {
   const [images, setImages] = useState([]);
@@ -59,8 +61,11 @@ const Gallery = () => {
     <>
       <Section>
         <SearchForm onSubmit={handleSubmit} />
-        <ImageGallery images={images} openModal={openModal} />
+        <AppDiv>
+          <ImageGallery images={images} openModal={openModal} />
+        </AppDiv>
         {isLoading && <Loader />}
+        {!query && <NotFound />}
         {loadMore && <Button onClick={changePage} />}
         {isModalOpen && (
           <Modal handleClick={openModal} height={'auto'}>

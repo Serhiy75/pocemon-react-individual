@@ -31,6 +31,7 @@ export const Item = styled.li`
   z-index: 1;
   width: 70px;
   height: 70px;
+
   &:nth-child(1):has(.active) ~ div {
     transform: translateX(calc(70px * 0));
   }
@@ -45,6 +46,12 @@ export const Item = styled.li`
   }
   &:nth-child(5):has(.active) ~ div {
     transform: translateX(calc(70px * 4));
+  }
+  &:nth-child(6):has(.active) ~ div {
+    transform: translateX(calc(70px * 5));
+  }
+  &:nth-child(7):has(.active) ~ div {
+    transform: translateX(calc(70px * 6));
   }
 `;
 
