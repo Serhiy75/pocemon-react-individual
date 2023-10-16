@@ -5,13 +5,6 @@ import Cast from './Movies/Cast';
 import Reviews from './Movies/Reviews';
 import { useDispatch } from 'react-redux';
 import { refreshUser } from 'redux/auth/operation';
-// import { Loader } from './Loader/Loader';
-
-// import Home from 'pages/Home';
-// import Heroes from 'pages/Heroes';
-// import Pocemons from 'pages/Pocemons';
-// import Movies from 'pages/Movies';
-// import MovieDetailes from 'pages/MovieDetailes';
 
 const Home = lazy(() => import('pages/Home'));
 const Heroes = lazy(() => import('pages/Heroes'));
@@ -20,6 +13,7 @@ const Movies = lazy(() => import('pages/Movies'));
 const MovieDetailes = lazy(() => import('pages/MovieDetailes'));
 const Pocemons = lazy(() => import('pages/Pocemons'));
 const Register = lazy(() => import('pages/Register/Register'));
+const Favorite = lazy(() => import('pages/Favorite/Favorite'));
 const Login = lazy(() => import('pages/Login/Login'));
 
 export const App = () => {
@@ -41,6 +35,7 @@ export const App = () => {
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
+          <Route path="favorite" element={<Favorite />} />
           <Route path="/pocemons" element={<Pocemons />} />
         </Route>
       </Routes>

@@ -1,6 +1,7 @@
 import Notiflix from 'notiflix';
 import { useEffect, useState } from 'react';
 import { fetchImages } from 'services/galleryApi';
+import errorImage from 'images/man-pointing-up.jpg';
 import {
   Button,
   ImageGallery,
@@ -12,6 +13,7 @@ import {
 import { ScrollToTop } from 'components/ScrollToTop/ScrollToTop';
 import { AppDiv } from './Gallery.styled';
 import { NotFound } from 'components/NotFound/NotFound';
+import { BeginSearch } from 'components/BeginSearch/BeginSearch';
 
 const Gallery = () => {
   const [images, setImages] = useState([]);
@@ -20,6 +22,7 @@ const Gallery = () => {
   const [loadMore, setLoadMore] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isEmpty, setIsEmpty] = useState(false);
   const [dataModal, setDataModal] = useState({
     image: '',
     alt: '',
@@ -31,6 +34,9 @@ const Gallery = () => {
       setIsLoading(true);
       try {
         const data = await fetchImages(query, page);
+        if (data.hits.length === 0) {
+          setIsEmpty(true);
+        }
         setImages(prevImages => [...prevImages, ...data.hits]);
         setLoadMore(page * 12 < data.totalHits);
       } catch (error) {
@@ -55,6 +61,7 @@ const Gallery = () => {
     setQuery(query);
     setImages([]);
     setPage(1);
+    setIsEmpty(false);
   };
 
   return (
@@ -65,7 +72,10 @@ const Gallery = () => {
           <ImageGallery images={images} openModal={openModal} />
         </AppDiv>
         {isLoading && <Loader />}
-        {!query && <NotFound />}
+        {!query && <BeginSearch image={errorImage} />}
+        {isEmpty && (
+          <NotFound title={' Nothing find! Please enter a valid query! 🤦‍♂️  '} />
+        )}
         {loadMore && <Button onClick={changePage} />}
         {isModalOpen && (
           <Modal handleClick={openModal} height={'auto'}>

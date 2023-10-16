@@ -4,6 +4,7 @@ import { BiCameraMovie } from 'react-icons/bi';
 import { HiOutlineHomeModern } from 'react-icons/hi2';
 import { GiNinjaHeroicStance, GiAnimalHide } from 'react-icons/gi';
 import { TfiGallery } from 'react-icons/tfi';
+import { MdOutlineFavoriteBorder } from 'react-icons/md';
 
 import {
   Indicator,
@@ -32,43 +33,58 @@ export const Header = () => {
                 <Text>Home</Text>
               </StyledLink>
             </Item>
-            <Item>
-              <StyledLink to="/register">
-                <HiOutlineHomeModern />
-                <Text>Register</Text>
-              </StyledLink>
-            </Item>
-            <Item>
-              <StyledLink to="/login">
-                <HiOutlineHomeModern />
-                <Text>Login</Text>
-              </StyledLink>
-            </Item>
-            <Item>
-              <StyledLink to="/pocemons">
-                <GiAnimalHide />
-                <Text>Pocemons</Text>
-              </StyledLink>
-            </Item>
-            <Item>
-              <StyledLink to="/heroes">
-                <GiNinjaHeroicStance />
-                <Text>Heroes</Text>
-              </StyledLink>
-            </Item>
-            <Item>
-              <StyledLink to="/gallery">
-                <TfiGallery />
+            {!isLoggedIn ? (
+              <>
+                {' '}
+                <Item>
+                  <StyledLink to="/register">
+                    <HiOutlineHomeModern />
+                    <Text>Register</Text>
+                  </StyledLink>
+                </Item>
+                <Item>
+                  <StyledLink to="/login">
+                    <HiOutlineHomeModern />
+                    <Text>Login</Text>
+                  </StyledLink>
+                </Item>
+              </>
+            ) : (
+              <>
+                <Item>
+                  <StyledLink to="/pocemons">
+                    <GiAnimalHide />
+                    <Text>Pocemons</Text>
+                  </StyledLink>
+                </Item>
+                <Item>
+                  <StyledLink to="/heroes">
+                    <GiNinjaHeroicStance />
+                    <Text>Heroes</Text>
+                  </StyledLink>
+                </Item>
+                <Item>
+                  <StyledLink to="/gallery">
+                    <TfiGallery />
 
-                <Text>Gallery</Text>
-              </StyledLink>
-            </Item>
-            <Item>
-              <StyledLink to="/movies">
-                <BiCameraMovie />
-                <Text>Movies</Text>
-              </StyledLink>
-            </Item>
+                    <Text>Gallery</Text>
+                  </StyledLink>
+                </Item>
+                <Item>
+                  <StyledLink to="/movies">
+                    <BiCameraMovie />
+                    <Text>Movies</Text>
+                  </StyledLink>
+                </Item>
+                <Item>
+                  <StyledLink to="/favorite">
+                    <MdOutlineFavoriteBorder />
+                    <Text>favoritew</Text>
+                  </StyledLink>
+                </Item>
+              </>
+            )}
+
             <Indicator className="indicator" />
           </List>
         </Navigation>

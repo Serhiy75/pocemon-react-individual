@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const StyledHeader = styled.header`
+  position: relative;
   display: flex;
   padding: 40px;
   background-color: #00ff8a;
@@ -52,6 +53,9 @@ export const Item = styled.li`
   }
   &:nth-child(7):has(.active) ~ div {
     transform: translateX(calc(70px * 6));
+  }
+  &:nth-child(8):has(.active) ~ div {
+    transform: translateX(calc(70px * 7));
   }
 `;
 

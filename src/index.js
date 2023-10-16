@@ -5,12 +5,20 @@ import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import 'modern-normalize/modern-normalize.css';
 import { Provider } from 'react-redux';
-import { store } from 'redux/store';
+import { persistor, store } from 'redux/store';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyle } from 'styles/GlobalStyles';
+import { PersistGate } from 'redux-persist/integration/react';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <Provider store={store}>
-    <BrowserRouter basename="/pocemon-react-individual">
-      <App />
-    </BrowserRouter>
-  </Provider>
+  <ThemeProvider theme={{}}>
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <BrowserRouter basename="/pocemon-react-individual">
+          <App />
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
+    <GlobalStyle />
+  </ThemeProvider>
 );

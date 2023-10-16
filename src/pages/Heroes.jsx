@@ -21,13 +21,13 @@ const Heroes = () => {
           const newHeroes = data.filter(hero => !heroesId.includes(hero.id));
           if (newHeroes.length > 0) {
             setIsLoadMore(true);
-            setIsLoading(false);
           }
 
           return [...prevState, ...newHeroes];
         });
       })
-      .catch(() => setError(true));
+      .catch(() => setError(true))
+      .finally(() => setIsLoading(false));
   }, [page]);
 
   const onClickLoadMore = () => {
