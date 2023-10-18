@@ -10,7 +10,7 @@ import {
   SearchForm,
   Section,
 } from 'components';
-import { ScrollToTop } from 'components/ScrollToTop/ScrollToTop';
+
 import { AppDiv } from './Gallery.styled';
 import { NotFound } from 'components/NotFound/NotFound';
 import { BeginSearch } from 'components/BeginSearch/BeginSearch';
@@ -83,7 +83,6 @@ const Gallery = () => {
           </Modal>
         )}
       </Section>
-      <ScrollToTop />
     </>
   );
 };

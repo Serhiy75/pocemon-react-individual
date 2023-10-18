@@ -1,7 +1,7 @@
 import { Button, Loader } from 'components';
 import { Error } from 'components/Error/Error';
 import { HeroList } from 'components/Heroes/HeroList/HeroList';
-import { ScrollToTop } from 'components/ScrollToTop/ScrollToTop';
+
 import { useEffect, useState } from 'react';
 import { getHero } from 'services/heroApi';
 
@@ -43,7 +43,7 @@ const Heroes = () => {
           Loadmore...
         </Button>
       )}
-      <ScrollToTop />
+
       {isLoading && <Loader />}
     </>
   );

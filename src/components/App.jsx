@@ -5,6 +5,7 @@ import Cast from './Movies/Cast';
 import Reviews from './Movies/Reviews';
 import { useDispatch } from 'react-redux';
 import { refreshUser } from 'redux/auth/operation';
+import { ScrollToTop } from './ScrollToTop/ScrollToTop';
 
 const Home = lazy(() => import('pages/Home'));
 const Heroes = lazy(() => import('pages/Heroes'));
@@ -39,6 +40,7 @@ export const App = () => {
           <Route path="/pocemons" element={<Pocemons />} />
         </Route>
       </Routes>
+      <ScrollToTop />
     </>
   );
 };

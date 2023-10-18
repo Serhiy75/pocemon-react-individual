@@ -4,7 +4,11 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addPocemon, deletePocemon } from 'redux/favorite/favoriteSlice';
 import { selectFavoritePocemons } from 'redux/favorite/selector';
-import { StyledHeart, StyledHeartIcon } from './PocemonListItem.styled';
+
+import {
+  StyledButton,
+  StyledHeartIcon,
+} from 'components/FavoriteBtn/FavoriteBtn.styled';
 
 export const PocemonItem = ({ pocemon }) => {
   const [toggleModal, setToggleModal] = useState(false);
@@ -18,7 +22,7 @@ export const PocemonItem = ({ pocemon }) => {
     const persistedPocemons = favoritePocemons.find(
       ({ id }) => pocemonId === id
     );
-    console.log(persistedPocemons);
+
     if (!persistedPocemons) {
       dispatch(addPocemon(pocemon));
     } else {
@@ -26,18 +30,18 @@ export const PocemonItem = ({ pocemon }) => {
     }
   };
   const isInFavorites = favoritePocemons.some(i => i.id === pocemon.id);
-  console.log(isInFavorites);
+
   return (
     <>
       <li className="pocemon-item" onClick={handleClick}>
-        <StyledHeart
+        <StyledButton
           onClick={event => {
             event.stopPropagation();
             handleToogleFavorites(pocemon.id);
           }}
         >
           <StyledHeartIcon $isInFavorites={isInFavorites} />
-        </StyledHeart>
+        </StyledButton>
         <img src={pocemon.sprites.front_default} alt="#"></img>
         {pocemon.name} {pocemon.id}
       </li>
