@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/pocemon-react-individual/static/css/main.9ea216de.css",
-    "main.js": "/pocemon-react-individual/static/js/main.9ce7ca6b.js",
-    "static/js/213.8bd8e5f3.chunk.js": "/pocemon-react-individual/static/js/213.8bd8e5f3.chunk.js",
+    "main.js": "/pocemon-react-individual/static/js/main.b52690cd.js",
+    "static/js/618.2e739e95.chunk.js": "/pocemon-react-individual/static/js/618.2e739e95.chunk.js",
     "static/css/774.abc1a6fa.chunk.css": "/pocemon-react-individual/static/css/774.abc1a6fa.chunk.css",
     "static/js/774.9f2b1cf2.chunk.js": "/pocemon-react-individual/static/js/774.9f2b1cf2.chunk.js",
     "static/js/608.8fb65d5f.chunk.js": "/pocemon-react-individual/static/js/608.8fb65d5f.chunk.js",
@@ -30,8 +30,8 @@
     "index.html": "/pocemon-react-individual/index.html",
     "static/media/heart.svg": "/pocemon-react-individual/static/media/heart.bb77324c5ab750c4c07b5e7ed081203e.svg",
     "main.9ea216de.css.map": "/pocemon-react-individual/static/css/main.9ea216de.css.map",
-    "main.9ce7ca6b.js.map": "/pocemon-react-individual/static/js/main.9ce7ca6b.js.map",
-    "213.8bd8e5f3.chunk.js.map": "/pocemon-react-individual/static/js/213.8bd8e5f3.chunk.js.map",
+    "main.b52690cd.js.map": "/pocemon-react-individual/static/js/main.b52690cd.js.map",
+    "618.2e739e95.chunk.js.map": "/pocemon-react-individual/static/js/618.2e739e95.chunk.js.map",
     "774.abc1a6fa.chunk.css.map": "/pocemon-react-individual/static/css/774.abc1a6fa.chunk.css.map",
     "774.9f2b1cf2.chunk.js.map": "/pocemon-react-individual/static/js/774.9f2b1cf2.chunk.js.map",
     "608.8fb65d5f.chunk.js.map": "/pocemon-react-individual/static/js/608.8fb65d5f.chunk.js.map",
@@ -55,6 +55,6 @@
   },
   "entrypoints": [
     "static/css/main.9ea216de.css",
-    "static/js/main.9ce7ca6b.js"
+    "static/js/main.b52690cd.js"
   ]
 }
