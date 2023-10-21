@@ -35,8 +35,8 @@ export const TimerModal = () => {
   }, [timerRunning]);
 
   return (
-    <div className="d-flex flex-column justify-content-center align-items-center p-5 text-bg-dark rounded-3 mb-5">
-      <h2 className="h1 m-5">{formatTime(time)}</h2>
+    <>
+      <h2>{formatTime(time)}</h2>
       <button
         onClick={handleToggleTimer}
         type="button"
@@ -44,7 +44,7 @@ export const TimerModal = () => {
       >
         Start/Stop
       </button>
-    </div>
+    </>
   );
 };
 

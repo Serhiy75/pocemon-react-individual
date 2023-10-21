@@ -1,11 +1,10 @@
 import { Component } from 'react';
 
-import { Modal } from '../Modal/Modal';
-
 import { TimerModal } from './TimerModal';
 
 import { GiClockwork } from 'react-icons/gi';
 import { OpenTimer } from './Timer.styled';
+import { ModalStyled } from './Modal.styled';
 
 export class Timer extends Component {
   state = {
@@ -19,21 +18,16 @@ export class Timer extends Component {
   render() {
     const { isOpen } = this.state;
     return (
-      <div className="d-flex my-5">
-        <OpenTimer
-          type="button"
-          className="btn btn-primary my-5"
-          onClick={this.toggle}
-        >
+      <>
+        <OpenTimer type="button" onClick={this.toggle}>
           <GiClockwork size={64} color="#ff00e5" />
         </OpenTimer>
-
         {isOpen && (
-          <Modal handleClick={this.toggle}>
+          <ModalStyled handleClick={this.toggle}>
             <TimerModal />
-          </Modal>
+          </ModalStyled>
         )}
-      </div>
+      </>
     );
   }
 }
