@@ -13,6 +13,6 @@ export const ModalStyled = styled.div`
   gap: 10px;
   width: 250px;
   height: 100px;
-  left: 5%;
-  top: -100px;
+  left: -80%;
+  top: 129px;
 `;

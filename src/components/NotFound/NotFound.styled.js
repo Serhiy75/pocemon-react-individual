@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  margin: 0 auto;
-  width: 500px;
-`;
+export const Container = styled.div``;
 export const Travolta = styled.img`
   display: block;
-
-  margin: 0 auto;
+  border: none;
+  border-radius: 50%;
+  margin: 20px auto;
 `;
 export const NotInlist = styled.h2`
   display: flex;

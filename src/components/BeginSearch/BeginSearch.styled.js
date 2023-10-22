@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin: 0 auto;
+  margin: 10px auto;
+  padding: 0;
   width: 500px;
 `;
 export const Travolta = styled.img`
   display: block;
-
+  object-fit: cover;
+  height: fit-content;
+  border: none;
+  border-radius: 50%;
   margin: 0 auto;
 `;
 export const NotInlist = styled.h2`

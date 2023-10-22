@@ -2,16 +2,9 @@ import Notiflix from 'notiflix';
 import { useEffect, useState } from 'react';
 import { fetchImages } from 'services/galleryApi';
 import errorImage from 'images/man-pointing-up.jpg';
-import {
-  Button,
-  ImageGallery,
-  Loader,
-  Modal,
-  SearchForm,
-  Section,
-} from 'components';
+import { Button, ImageGallery, Loader, Modal, SearchForm } from 'components';
 
-import { AppDiv } from './Gallery.styled';
+import { AppDiv, SearchHeader, StyledSection } from './Gallery.styled';
 import { NotFound } from 'components/NotFound/NotFound';
 import { BeginSearch } from 'components/BeginSearch/BeginSearch';
 
@@ -66,8 +59,10 @@ const Gallery = () => {
 
   return (
     <>
-      <Section>
-        <SearchForm onSubmit={handleSubmit} />
+      <StyledSection>
+        <SearchHeader>
+          <SearchForm onSubmit={handleSubmit} />
+        </SearchHeader>
         <AppDiv>
           <ImageGallery images={images} openModal={openModal} />
         </AppDiv>
@@ -82,7 +77,7 @@ const Gallery = () => {
             <img src={dataModal.image} alt={dataModal.alt} />
           </Modal>
         )}
-      </Section>
+      </StyledSection>
     </>
   );
 };

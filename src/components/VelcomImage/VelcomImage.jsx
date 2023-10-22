@@ -1,10 +1,10 @@
 import VelcomFamily from 'images/welcome-to-the-family.gif';
-import { Container } from './VelcomImage.styled';
+import { Container, FamelyImg } from './VelcomImage.styled';
 
 export const VelcomImage = () => {
   return (
     <Container>
-      <img src={VelcomFamily} alt="Velcome to the family" />
+      <FamelyImg src={VelcomFamily} alt="Velcome to the family" />
     </Container>
   );
 };
