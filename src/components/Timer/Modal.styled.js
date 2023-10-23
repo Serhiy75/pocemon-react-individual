@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ModalStyled = styled.div`
   display: flex;
   flex-direction: column;
-  position: relative;
+  position: absolute;
   justify-content: center;
   align-items: center;
   border: 1px solid black;
@@ -13,6 +13,6 @@ export const ModalStyled = styled.div`
   gap: 10px;
   width: 250px;
   height: 100px;
-  left: -80%;
-  top: 129px;
+  left: 3%;
+  top: 289px;
 `;

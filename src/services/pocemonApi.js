@@ -1,15 +1,14 @@
 import axios from 'axios';
 
-export function getPokemons(page) {
+export function getPokemons(offset) {
   const BASE_URL = 'https://pokeapi.co/api/v2/';
   const END_POINT = 'pokemon?';
   const params = new URLSearchParams({
-    limit: 1000,
-    offset: 60,
+    offset,
   });
   const url = BASE_URL + END_POINT + params;
   return axios
-    .get(url, page)
+    .get(url)
     .then(res => res.data) //масив посилань на покемонів
     .then(({ results }) => {
       const promises = results.map(el => axios.get(el.url)); //отримуєм масив промісів запитів

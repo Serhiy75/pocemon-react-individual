@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { lazy, useEffect } from 'react';
 import { Header } from './Header/Header';
 import Cast from './Movies/Cast';
@@ -13,8 +13,8 @@ import { isRefreshing } from 'redux/auth/selector';
 const Home = lazy(() => import('pages/Home'));
 const Heroes = lazy(() => import('pages/Heroes'));
 const Gallery = lazy(() => import('pages/Gallery/Gallery'));
-const Movies = lazy(() => import('pages/Movies'));
-const MovieDetailes = lazy(() => import('pages/MovieDetailes'));
+const Movies = lazy(() => import('pages/Movies/Movies'));
+const MovieDetailes = lazy(() => import('pages/Movies/MovieDetailes'));
 const Pocemons = lazy(() => import('pages/Pocemons'));
 const Register = lazy(() => import('pages/Register/Register'));
 const Favorite = lazy(() => import('pages/Favorite/Favorite'));
@@ -81,6 +81,7 @@ export const App = () => {
             }
           />
         </Route>
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       <ScrollToTop />
     </>
