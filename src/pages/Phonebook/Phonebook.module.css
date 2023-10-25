@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  max-width: 380px;
+
+  padding: 50px 20px;
+  margin: 130px auto 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.title {
+  color: #d9d9d9;
+}

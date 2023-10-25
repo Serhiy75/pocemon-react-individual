@@ -4,7 +4,7 @@ import { BiCameraMovie } from 'react-icons/bi';
 import { HiOutlineHomeModern } from 'react-icons/hi2';
 import { GiNinjaHeroicStance, GiAnimalHide } from 'react-icons/gi';
 import { TfiGallery } from 'react-icons/tfi';
-import { MdOutlineFavoriteBorder } from 'react-icons/md';
+import { MdContactPhone, MdOutlineFavoriteBorder } from 'react-icons/md';
 
 import {
   Indicator,
@@ -13,13 +13,15 @@ import {
   Navigation,
   StyledHeader,
   StyledLink,
+  SwitchBox,
   Text,
 } from './Header.styled';
 import { useSelector } from 'react-redux';
 import { selectIsLogin } from 'redux/auth/selector';
 import { UserMenu } from 'components/UserMenu/UserMenu';
+import ReactSwitch from 'react-switch';
 
-export const Header = () => {
+export const Header = ({ theme, toggleTheme }) => {
   const isLoggedIn = useSelector(selectIsLogin);
 
   return (
@@ -82,12 +84,21 @@ export const Header = () => {
                     <Text>favoritew</Text>
                   </StyledLink>
                 </Item>
+                <Item>
+                  <StyledLink to="/contacts">
+                    <MdContactPhone />
+                    <Text>Phonebook</Text>
+                  </StyledLink>
+                </Item>
               </>
             )}
 
             <Indicator className="indicator" />
           </List>
         </Navigation>
+        <SwitchBox>
+          <ReactSwitch onChange={toggleTheme} checked={theme === 'light'} />
+        </SwitchBox>
         {isLoggedIn && <UserMenu />}
       </StyledHeader>
       <Suspense fallback={<p>Loading...</p>}>

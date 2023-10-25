@@ -1,6 +1,16 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
+
+/* body{
+    #light  {
+  background-color: #ffc700;
+}
+#dark  {
+  background-color: brown;
+}
+} */
+
 ul,ol{
     margin: 0;
     padding: 0;

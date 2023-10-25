@@ -5,7 +5,7 @@ export const StyledHeader = styled.header`
   position: relative;
   display: flex;
   padding: 40px;
-  background-color: #ffc700;
+  /* background-color: #ffc700; */
 `;
 
 export const Navigation = styled.nav`
@@ -56,6 +56,9 @@ export const Item = styled.li`
   }
   &:nth-child(8):has(.active) ~ div {
     transform: translateX(calc(70px * 7));
+  }
+  &:nth-child(9):has(.active) ~ div {
+    transform: translateX(calc(70px * 8));
   }
 `;
 
@@ -134,5 +137,6 @@ export const Indicator = styled.div`
     box-shadow: 0px -10px 0 0 #ffc700;
   }
 `;
+export const SwitchBox = styled.div``;
 
 // ${({ active }) => active}
