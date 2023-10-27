@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/pocemon-react-individual/static/css/main.cfc80781.css",
-    "main.js": "/pocemon-react-individual/static/js/main.6bff24b5.js",
+    "main.js": "/pocemon-react-individual/static/js/main.b141bc9e.js",
     "static/js/605.96f6936a.chunk.js": "/pocemon-react-individual/static/js/605.96f6936a.chunk.js",
     "static/css/651.a2c16d33.chunk.css": "/pocemon-react-individual/static/css/651.a2c16d33.chunk.css",
     "static/js/651.c9e64eaf.chunk.js": "/pocemon-react-individual/static/js/651.c9e64eaf.chunk.js",
-    "static/js/608.61ad2d38.chunk.js": "/pocemon-react-individual/static/js/608.61ad2d38.chunk.js",
+    "static/js/608.ef30e361.chunk.js": "/pocemon-react-individual/static/js/608.ef30e361.chunk.js",
     "static/css/292.0b39a635.chunk.css": "/pocemon-react-individual/static/css/292.0b39a635.chunk.css",
     "static/js/292.d7f35574.chunk.js": "/pocemon-react-individual/static/js/292.d7f35574.chunk.js",
     "static/css/510.d8ff6738.chunk.css": "/pocemon-react-individual/static/css/510.d8ff6738.chunk.css",
@@ -34,11 +34,11 @@
     "index.html": "/pocemon-react-individual/index.html",
     "static/media/heart.svg": "/pocemon-react-individual/static/media/heart.bb77324c5ab750c4c07b5e7ed081203e.svg",
     "main.cfc80781.css.map": "/pocemon-react-individual/static/css/main.cfc80781.css.map",
-    "main.6bff24b5.js.map": "/pocemon-react-individual/static/js/main.6bff24b5.js.map",
+    "main.b141bc9e.js.map": "/pocemon-react-individual/static/js/main.b141bc9e.js.map",
     "605.96f6936a.chunk.js.map": "/pocemon-react-individual/static/js/605.96f6936a.chunk.js.map",
     "651.a2c16d33.chunk.css.map": "/pocemon-react-individual/static/css/651.a2c16d33.chunk.css.map",
     "651.c9e64eaf.chunk.js.map": "/pocemon-react-individual/static/js/651.c9e64eaf.chunk.js.map",
-    "608.61ad2d38.chunk.js.map": "/pocemon-react-individual/static/js/608.61ad2d38.chunk.js.map",
+    "608.ef30e361.chunk.js.map": "/pocemon-react-individual/static/js/608.ef30e361.chunk.js.map",
     "292.0b39a635.chunk.css.map": "/pocemon-react-individual/static/css/292.0b39a635.chunk.css.map",
     "292.d7f35574.chunk.js.map": "/pocemon-react-individual/static/js/292.d7f35574.chunk.js.map",
     "510.d8ff6738.chunk.css.map": "/pocemon-react-individual/static/css/510.d8ff6738.chunk.css.map",
@@ -63,6 +63,6 @@
   },
   "entrypoints": [
     "static/css/main.cfc80781.css",
-    "static/js/main.6bff24b5.js"
+    "static/js/main.b141bc9e.js"
   ]
 }
