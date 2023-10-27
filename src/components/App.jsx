@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { createContext, lazy, useEffect, useState } from 'react';
+import { lazy, useEffect } from 'react';
 import { Header } from './Header/Header';
 import Cast from './Movies/Cast';
 import Reviews from './Movies/Reviews';
@@ -9,7 +9,11 @@ import { ScrollToTop } from './ScrollToTop/ScrollToTop';
 import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { isRefreshing } from 'redux/auth/selector';
-import { ThemeBox } from './App.styled';
+
+import { useLocalStorage } from 'hooks/useLocalStorage';
+import { GlobalStyle } from 'styles/GlobalStyles';
+import { ThemeProvider } from 'styled-components';
+import { theme } from 'styles/theme';
 
 const Home = lazy(() => import('pages/Home'));
 const Heroes = lazy(() => import('pages/Heroes'));
@@ -22,95 +26,90 @@ const Favorite = lazy(() => import('pages/Favorite/Favorite'));
 const Login = lazy(() => import('pages/Login/Login'));
 const Phonebook = lazy(() => import('pages/Phonebook/Phonebook'));
 
-export const ThemeContext = createContext(null);
-
 export const App = () => {
-  const [theme, setTheme] = useState('light');
-  const toggleTheme = () => {
-    setTheme(curr => (curr === 'light' ? 'dark' : 'light'));
-  };
+  const [themeColor, setThemeColor] = useLocalStorage('theme', 'light');
+
   const dispatch = useDispatch();
   const isRefresh = useSelector(isRefreshing);
+
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
+
   return isRefresh ? (
     <p>Refreshing...</p>
   ) : (
     <>
-      <ThemeContext.Provider value={{ theme, toggleTheme }}>
-        <ThemeBox id={theme}>
-          <Routes>
+      <ThemeProvider theme={theme[themeColor]}>
+        <Routes>
+          <Route
+            path="/"
+            element={<Header setTheme={setThemeColor} theme={themeColor} />}
+          >
+            <Route index element={<Home />} />
             <Route
-              path="/"
-              element={<Header theme={theme} toggleTheme={toggleTheme} />}
+              path="/register"
+              element={<PublicRoute component={<Register />} redirectTo="/" />}
+            />
+            <Route
+              path="/login"
+              element={<PublicRoute component={<Login />} redirectTo="/" />}
+            />
+            <Route
+              path="/heroes"
+              element={
+                <PrivateRoute component={<Heroes />} redirectTo="/login" />
+              }
+            />
+            <Route
+              path="/gallery"
+              element={
+                <PrivateRoute component={<Gallery />} redirectTo="/login" />
+              }
+            />
+            <Route
+              path="/movies"
+              element={
+                <PrivateRoute component={<Movies />} redirectTo="/login" />
+              }
+            />
+            <Route
+              path="/movies/:movieId"
+              element={
+                <PrivateRoute
+                  component={<MovieDetailes />}
+                  redirectTo="/login"
+                />
+              }
             >
-              <Route index element={<Home />} />
-              <Route
-                path="/register"
-                element={
-                  <PublicRoute component={<Register />} redirectTo="/" />
-                }
-              />
-              <Route
-                path="/login"
-                element={<PublicRoute component={<Login />} redirectTo="/" />}
-              />
-              <Route
-                path="/heroes"
-                element={
-                  <PrivateRoute component={<Heroes />} redirectTo="/login" />
-                }
-              />
-              <Route
-                path="/gallery"
-                element={
-                  <PrivateRoute component={<Gallery />} redirectTo="/login" />
-                }
-              />
-              <Route
-                path="/movies"
-                element={
-                  <PrivateRoute component={<Movies />} redirectTo="/login" />
-                }
-              />
-              <Route
-                path="/movies/:movieId"
-                element={
-                  <PrivateRoute
-                    component={<MovieDetailes />}
-                    redirectTo="/login"
-                  />
-                }
-              >
-                <Route path="cast" element={<Cast />} />
-                <Route path="reviews" element={<Reviews />} />
-              </Route>
-              <Route
-                path="favorite"
-                element={
-                  <PrivateRoute component={<Favorite />} redirectTo="/login" />
-                }
-              />
-              <Route
-                path="/pocemons"
-                element={
-                  <PrivateRoute component={<Pocemons />} redirectTo="/login" />
-                }
-              />
-              <Route
-                path="/contacts"
-                element={
-                  <PrivateRoute component={<Phonebook />} redirectTo="/" />
-                }
-              />
+              <Route path="cast" element={<Cast />} />
+              <Route path="reviews" element={<Reviews />} />
             </Route>
+            <Route
+              path="favorite"
+              element={
+                <PrivateRoute component={<Favorite />} redirectTo="/login" />
+              }
+            />
+            <Route
+              path="/pocemons"
+              element={
+                <PrivateRoute component={<Pocemons />} redirectTo="/login" />
+              }
+            />
+            <Route
+              path="/contacts"
+              element={
+                <PrivateRoute component={<Phonebook />} redirectTo="/login" />
+              }
+            />
+          </Route>
 
-            <Route path="*" element={<Navigate to="/" />} />
-          </Routes>
-          <ScrollToTop />
-        </ThemeBox>
-      </ThemeContext.Provider>
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+        <ScrollToTop />
+        <GlobalStyle />
+      </ThemeProvider>
     </>
   );
 };

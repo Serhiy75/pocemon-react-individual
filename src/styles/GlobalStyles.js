@@ -2,14 +2,9 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 
-/* body{
-    #light  {
-  background-color: #ffc700;
+body{
+    background:${({ theme }) => theme.colors.body}
 }
-#dark  {
-  background-color: brown;
-}
-} */
 
 ul,ol{
     margin: 0;

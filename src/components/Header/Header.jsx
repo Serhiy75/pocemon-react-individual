@@ -13,15 +13,14 @@ import {
   Navigation,
   StyledHeader,
   StyledLink,
-  SwitchBox,
   Text,
 } from './Header.styled';
 import { useSelector } from 'react-redux';
 import { selectIsLogin } from 'redux/auth/selector';
 import { UserMenu } from 'components/UserMenu/UserMenu';
-import ReactSwitch from 'react-switch';
+import { ToggleTheme } from 'components/ToggleTheme/ToggleTheme';
 
-export const Header = ({ theme, toggleTheme }) => {
+export const Header = ({ setTheme, theme }) => {
   const isLoggedIn = useSelector(selectIsLogin);
 
   return (
@@ -96,10 +95,9 @@ export const Header = ({ theme, toggleTheme }) => {
             <Indicator className="indicator" />
           </List>
         </Navigation>
-        <SwitchBox>
-          <ReactSwitch onChange={toggleTheme} checked={theme === 'light'} />
-        </SwitchBox>
+
         {isLoggedIn && <UserMenu />}
+        <ToggleTheme setTheme={setTheme} theme={theme} />
       </StyledHeader>
       <Suspense fallback={<p>Loading...</p>}>
         <Outlet />

@@ -112,7 +112,7 @@ export const Indicator = styled.div`
   position: absolute;
   top: -50%;
   border-radius: 50%;
-  border: 6px solid #ffc700;
+  border: 6px solid ${({ theme }) => theme.colors.body};
   transition: 0.5s;
   &::before {
     content: '';
@@ -123,7 +123,7 @@ export const Indicator = styled.div`
     height: 20px;
     background-color: transparent;
     border-top-right-radius: 20px;
-    box-shadow: 0px -10px 0 0 #ffc700;
+    box-shadow: 0px -10px 0 0 ${({ theme }) => theme.colors.body};
   }
   &::after {
     content: '';
@@ -134,9 +134,7 @@ export const Indicator = styled.div`
     height: 20px;
     background-color: transparent;
     border-top-left-radius: 20px;
-    box-shadow: 0px -10px 0 0 #ffc700;
+    box-shadow: 0px -10px 0 0 ${({ theme }) => theme.colors.body};
   }
 `;
 export const SwitchBox = styled.div``;
-
-// ${({ active }) => active}

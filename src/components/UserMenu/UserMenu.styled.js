@@ -11,3 +11,7 @@ export const Button = styled.button`
   display: flex;
   align-items: center;
 `;
+
+export const Text = styled.p`
+  color: ${({ theme }) => theme.colors.text};
+`;
