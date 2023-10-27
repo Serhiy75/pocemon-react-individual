@@ -4,6 +4,7 @@ export const Box = styled.div`
   position: absolute;
   right: 15px;
   top: 50%;
+  right: 15%;
   transform: translateY(-50%);
 `;
 
