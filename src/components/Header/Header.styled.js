@@ -70,7 +70,7 @@ export const StyledLink = styled(NavLink)`
   flex-direction: column;
   text-align: center;
   font-weight: 500;
-  color: #64864a;
+  color: ${({ theme }) => theme.colors.text};
   & svg {
     position: relative;
     display: block;
@@ -121,6 +121,7 @@ export const Indicator = styled.div`
     left: -22px;
     width: 20px;
     height: 20px;
+    transition: 0.5s;
     background-color: transparent;
     border-top-right-radius: 20px;
     box-shadow: 0px -10px 0 0 ${({ theme }) => theme.colors.body};
@@ -132,6 +133,7 @@ export const Indicator = styled.div`
     right: -22px;
     width: 20px;
     height: 20px;
+    transition: 0.5s;
     background-color: transparent;
     border-top-left-radius: 20px;
     box-shadow: 0px -10px 0 0 ${({ theme }) => theme.colors.body};

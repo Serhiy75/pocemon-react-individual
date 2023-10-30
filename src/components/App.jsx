@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { lazy, useEffect } from 'react';
+import { lazy, useContext, useEffect } from 'react';
 import { Header } from './Header/Header';
 import Cast from './Movies/Cast';
 import Reviews from './Movies/Reviews';
@@ -10,10 +10,10 @@ import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { isRefreshing } from 'redux/auth/selector';
 
-import { useLocalStorage } from 'hooks/useLocalStorage';
 import { GlobalStyle } from 'styles/GlobalStyles';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'styles/theme';
+import { ThemeContext } from 'ThemeContext';
 
 const Home = lazy(() => import('pages/Home'));
 const Heroes = lazy(() => import('pages/Heroes'));
@@ -27,8 +27,7 @@ const Login = lazy(() => import('pages/Login/Login'));
 const Phonebook = lazy(() => import('pages/Phonebook/Phonebook'));
 
 export const App = () => {
-  const [themeColor, setThemeColor] = useLocalStorage('theme', 'light');
-
+  const { theme: themeColor } = useContext(ThemeContext);
   const dispatch = useDispatch();
   const isRefresh = useSelector(isRefreshing);
 
@@ -42,10 +41,7 @@ export const App = () => {
     <>
       <ThemeProvider theme={theme[themeColor]}>
         <Routes>
-          <Route
-            path="/"
-            element={<Header setTheme={setThemeColor} theme={themeColor} />}
-          >
+          <Route path="/" element={<Header />}>
             <Route index element={<Home />} />
             <Route
               path="/register"

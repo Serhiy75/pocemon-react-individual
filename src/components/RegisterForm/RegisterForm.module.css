@@ -73,3 +73,7 @@
 .label input:hover {
   border-color: #7d2ae8;
 }
+.error {
+  color: red;
+  font-weight: 500;
+}

@@ -20,7 +20,7 @@ import { selectIsLogin } from 'redux/auth/selector';
 import { UserMenu } from 'components/UserMenu/UserMenu';
 import { ToggleTheme } from 'components/ToggleTheme/ToggleTheme';
 
-export const Header = ({ setTheme, theme }) => {
+export const Header = () => {
   const isLoggedIn = useSelector(selectIsLogin);
 
   return (
@@ -97,7 +97,7 @@ export const Header = ({ setTheme, theme }) => {
         </Navigation>
 
         {isLoggedIn && <UserMenu />}
-        <ToggleTheme setTheme={setTheme} theme={theme} />
+        <ToggleTheme />
       </StyledHeader>
       <Suspense fallback={<p>Loading...</p>}>
         <Outlet />

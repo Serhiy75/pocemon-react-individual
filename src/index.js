@@ -8,12 +8,15 @@ import { Provider } from 'react-redux';
 import { persistor, store } from 'redux/store';
 
 import { PersistGate } from 'redux-persist/integration/react';
+import { ThemeProvider } from 'ThemeContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
     <PersistGate persistor={persistor}>
       <BrowserRouter basename="/pocemon-react-individual">
-        <App />
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
       </BrowserRouter>
     </PersistGate>
   </Provider>

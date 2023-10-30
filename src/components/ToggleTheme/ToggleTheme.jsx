@@ -1,13 +1,25 @@
-import ReactSwitch from 'react-switch';
+import { useContext } from 'react';
+import {
+  FaRegLightbulbStyled,
+  GiNightSkyStyled,
+  ReactSwitchStyled,
+} from './ToggleTheme.styled';
+import { ThemeContext } from 'ThemeContext';
 
-export const ToggleTheme = ({ setTheme, theme }) => {
-  const onChangeTheme = () => {
-    setTheme(curr => (curr === 'light' ? 'dark' : 'light'));
-  };
+export const ToggleTheme = () => {
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
     <div>
-      <ReactSwitch onChange={onChangeTheme} checked={theme === 'dark'} />
+      <ReactSwitchStyled
+        className="reactSwitch"
+        uncheckedHandleIcon={<FaRegLightbulbStyled />}
+        checkedHandleIcon={<GiNightSkyStyled />}
+        checkedIcon={<FaRegLightbulbStyled />}
+        uncheckedIcon={<GiNightSkyStyled />}
+        onChange={toggleTheme}
+        checked={theme === 'dark'}
+      />
     </div>
   );
 };
