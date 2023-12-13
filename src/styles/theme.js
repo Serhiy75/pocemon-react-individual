@@ -1,6 +1,7 @@
 export const theme = Object.freeze({
   light: {
     colors: {
+      border: 'red',
       body: 'lime',
       text: 'yellow',
       icon: 'lime',
@@ -10,6 +11,7 @@ export const theme = Object.freeze({
   },
   dark: {
     colors: {
+      border: 'yellow',
       body: 'brown',
       text: 'green',
       icon: 'fuchsia',
