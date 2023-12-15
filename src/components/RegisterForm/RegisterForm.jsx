@@ -1,12 +1,20 @@
 import { useDispatch } from 'react-redux';
-import css from './RegisterForm.module.css';
-import { Link } from 'react-router-dom';
 import { register } from 'redux/auth/operation';
-import { Field, Formik, Form, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
 import Notiflix from 'notiflix';
 import * as yup from 'yup';
 import { TogglePasswordIcon } from 'components/TogglePasswordVisibility/TogglePasswordVisibility';
 import { usePasswordToggle } from 'helpers/usePasswordToggle';
+import {
+  Button,
+  ErrorBox,
+  FieldBox,
+  FieldInput,
+  FormContainer,
+  FormLink,
+  Title,
+  WrapperForm,
+} from './RegisterForm.styled';
 
 const validationSchema = yup.object().shape({
   email: yup
@@ -53,8 +61,8 @@ export const RegisterForm = () => {
   };
 
   return (
-    <div className={css.register}>
-      <h2 className={css.labeltitle}>Registration</h2>
+    <WrapperForm>
+      <Title>Registration</Title>
       <Formik
         initialValues={{
           name: '',
@@ -65,75 +73,55 @@ export const RegisterForm = () => {
         onSubmit={handleSubmit}
         validationSchema={validationSchema}
       >
-        {({ errors, touched }) => {
+        {() => {
           return (
-            <Form className={css.form}>
-              <div className={css.label}>
-                <Field
-                  className={css.input}
+            <FormContainer>
+              <FieldBox>
+                <FieldInput
                   name="name"
                   type="text"
                   placeholder="Enter your name"
                 />
-                <ErrorMessage
-                  name="name"
-                  className={css.error}
-                  component="div"
-                />
-              </div>
-              <div className={css.label}>
-                <Field
-                  className={css.input}
+                <ErrorBox name="name" component="div" />
+              </FieldBox>
+              <FieldBox>
+                <FieldInput
                   name="email"
                   type="email"
                   placeholder="Enter your email"
                 />
-                <ErrorMessage
-                  name="email"
-                  className={css.error}
-                  component="div"
-                />
-              </div>
-              <div className={css.label}>
-                <Field
-                  className={css.input}
+                <ErrorBox name="email" component="div" />
+              </FieldBox>
+              <FieldBox>
+                <FieldInput
                   name="password"
                   type={showPasswords.password1 ? 'text' : 'password'}
                   placeholder="Enter your password"
                 />
-                {errors.password && touched.password && (
-                  <p className={css.error}>{errors.password}</p>
-                )}
+                <ErrorBox name="password" component="div" />
                 <TogglePasswordIcon
                   showPassword={showPasswords.password1}
                   onToggle={() => togglePasswordVisibility('password1')}
                 />
-              </div>
-              <div className={css.label}>
-                <Field
+              </FieldBox>
+              <FieldBox>
+                <FieldInput
                   type={showPasswords.password2 ? 'text' : 'password'}
                   name="confirmPassword"
                   placeholder="confirm password"
-                  className={css.input}
                 />
-                <ErrorMessage
-                  name="confirmPassword"
-                  className={css.error}
-                  component="div"
-                />
+                <ErrorBox name="confirmPassword" component="div" />
                 <TogglePasswordIcon
                   showPassword={showPasswords.password2}
                   onToggle={() => togglePasswordVisibility('password2')}
                 />
-              </div>
-              <button type="submit" className={css.button}>
-                Register
-              </button>
-            </Form>
+              </FieldBox>
+              <Button type="submit">Register</Button>
+            </FormContainer>
           );
         }}
       </Formik>
-      <Link to="/login">log in</Link>
-    </div>
+      <FormLink to="/login">log in</FormLink>
+    </WrapperForm>
   );
 };
