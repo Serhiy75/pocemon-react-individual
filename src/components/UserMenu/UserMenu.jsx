@@ -10,7 +10,7 @@ export const UserMenu = () => {
 
   return (
     <Box>
-      <Text>Welcome, {user.name}</Text>
+      <Text>Welcome, {user.name.split(' ')[0]}</Text>
       <Button type="button" onClick={() => dispatch(logout())}>
         Log Out <GiExitDoor size={36} />
       </Button>

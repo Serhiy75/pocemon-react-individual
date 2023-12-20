@@ -19,6 +19,7 @@ import { useSelector } from 'react-redux';
 import { selectIsLogin } from 'redux/auth/selector';
 import { UserMenu } from 'components/UserMenu/UserMenu';
 import { ToggleTheme } from 'components/ToggleTheme/ToggleTheme';
+import MobileMenu from 'components/MobileMenu/MobileMenu';
 
 export const Header = () => {
   const isLoggedIn = useSelector(selectIsLogin);
@@ -26,6 +27,7 @@ export const Header = () => {
   return (
     <>
       <StyledHeader>
+        <MobileMenu />
         <Navigation>
           <List>
             <Item>
@@ -80,7 +82,7 @@ export const Header = () => {
                 <Item>
                   <StyledLink to="/favorite">
                     <MdOutlineFavoriteBorder />
-                    <Text>favoritew</Text>
+                    <Text>favorite</Text>
                   </StyledLink>
                 </Item>
                 <Item>

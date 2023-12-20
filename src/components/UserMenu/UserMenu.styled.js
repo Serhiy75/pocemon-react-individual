@@ -2,9 +2,8 @@ import styled from 'styled-components';
 
 export const Box = styled.div`
   position: absolute;
-  right: 15px;
   top: 50%;
-  right: 15%;
+  right: 2%;
   transform: translateY(-50%);
 `;
 
