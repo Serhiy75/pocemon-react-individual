@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ModalStyled = styled.div`
   display: flex;
   flex-direction: column;
-  position: absolute;
+  /* position: absolute; */
   justify-content: center;
   align-items: center;
   border: 1px solid black;

@@ -1,25 +1,13 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { BiCameraMovie } from 'react-icons/bi';
-import { HiOutlineHomeModern } from 'react-icons/hi2';
-import { GiNinjaHeroicStance, GiAnimalHide } from 'react-icons/gi';
-import { TfiGallery } from 'react-icons/tfi';
-import { MdContactPhone, MdOutlineFavoriteBorder } from 'react-icons/md';
 
-import {
-  Indicator,
-  Item,
-  List,
-  Navigation,
-  StyledHeader,
-  StyledLink,
-  Text,
-} from './Header.styled';
+import { StyledHeader } from './Header.styled';
 import { useSelector } from 'react-redux';
 import { selectIsLogin } from 'redux/auth/selector';
 import { UserMenu } from 'components/UserMenu/UserMenu';
-import { ToggleTheme } from 'components/ToggleTheme/ToggleTheme';
 import MobileMenu from 'components/MobileMenu/MobileMenu';
+import { MediaQuery } from 'components/MediaQuery/MediaQuery';
+import { DesktopMenu } from 'components/DesktopMenu/DesktopMenu';
 
 export const Header = () => {
   const isLoggedIn = useSelector(selectIsLogin);
@@ -27,79 +15,13 @@ export const Header = () => {
   return (
     <>
       <StyledHeader>
-        <MobileMenu />
-        <Navigation>
-          <List>
-            <Item>
-              <StyledLink to="/">
-                <HiOutlineHomeModern />
-                <Text>Home</Text>
-              </StyledLink>
-            </Item>
-            {!isLoggedIn ? (
-              <>
-                {' '}
-                <Item>
-                  <StyledLink to="/register">
-                    <HiOutlineHomeModern />
-                    <Text>Register</Text>
-                  </StyledLink>
-                </Item>
-                <Item>
-                  <StyledLink to="/login">
-                    <HiOutlineHomeModern />
-                    <Text>Login</Text>
-                  </StyledLink>
-                </Item>
-              </>
-            ) : (
-              <>
-                <Item>
-                  <StyledLink to="/pocemons">
-                    <GiAnimalHide />
-                    <Text>Pocemons</Text>
-                  </StyledLink>
-                </Item>
-                <Item>
-                  <StyledLink to="/heroes">
-                    <GiNinjaHeroicStance />
-                    <Text>Heroes</Text>
-                  </StyledLink>
-                </Item>
-                <Item>
-                  <StyledLink to="/gallery">
-                    <TfiGallery />
-
-                    <Text>Gallery</Text>
-                  </StyledLink>
-                </Item>
-                <Item>
-                  <StyledLink to="/movies">
-                    <BiCameraMovie />
-                    <Text>Movies</Text>
-                  </StyledLink>
-                </Item>
-                <Item>
-                  <StyledLink to="/favorite">
-                    <MdOutlineFavoriteBorder />
-                    <Text>favorite</Text>
-                  </StyledLink>
-                </Item>
-                <Item>
-                  <StyledLink to="/contacts">
-                    <MdContactPhone />
-                    <Text>Phonebook</Text>
-                  </StyledLink>
-                </Item>
-              </>
-            )}
-
-            <Indicator className="indicator" />
-          </List>
-        </Navigation>
-
+        <MediaQuery device="default">
+          <MobileMenu />
+        </MediaQuery>
+        <MediaQuery device="desktop">
+          <DesktopMenu />
+        </MediaQuery>
         {isLoggedIn && <UserMenu />}
-        <ToggleTheme />
       </StyledHeader>
       <Suspense fallback={<p>Loading...</p>}>
         <Outlet />

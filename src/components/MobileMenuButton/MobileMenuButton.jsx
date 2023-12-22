@@ -7,7 +7,7 @@ import {
 
 const MobileMenuButton = ({ handleClick, open }) => {
   return (
-    <Container onClick={handleClick}>
+    <Container onClick={handleClick} open={open}>
       <LineTop open={open} />
       <LIneMidle open={open} />
       <LineBottom open={open} />

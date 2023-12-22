@@ -3,7 +3,7 @@ import { Component } from 'react';
 import { TimerModal } from './TimerModal';
 
 import { GiClockwork } from 'react-icons/gi';
-import { OpenTimer } from './Timer.styled';
+import { Container, OpenTimer } from './Timer.styled';
 import { ModalStyled } from './Modal.styled';
 
 export class Timer extends Component {
@@ -18,16 +18,16 @@ export class Timer extends Component {
   render() {
     const { isOpen } = this.state;
     return (
-      <>
-        <OpenTimer type="button" onClick={this.toggle}>
-          <GiClockwork size={64} color="#ff00e5" />
-        </OpenTimer>
+      <Container>
         {isOpen && (
           <ModalStyled handleClick={this.toggle}>
             <TimerModal />
           </ModalStyled>
         )}
-      </>
+        <OpenTimer type="button" onClick={this.toggle}>
+          <GiClockwork size={64} color="#ff00e5" />
+        </OpenTimer>
+      </Container>
     );
   }
 }

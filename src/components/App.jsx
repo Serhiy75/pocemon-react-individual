@@ -14,6 +14,8 @@ import { GlobalStyle } from 'styles/GlobalStyles';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'styles/theme';
 import { ThemeContext } from 'ThemeContext';
+import { ToggleTheme } from './ToggleTheme/ToggleTheme';
+import Calendar from 'pages/Calendar';
 
 const Home = lazy(() => import('pages/Home'));
 const Heroes = lazy(() => import('pages/Heroes'));
@@ -99,10 +101,18 @@ export const App = () => {
                 <PrivateRoute component={<Phonebook />} redirectTo="/login" />
               }
             />
+
+            <Route
+              path="/calendar"
+              element={
+                <PrivateRoute component={<Calendar />} redirectTo="/login" />
+              }
+            />
           </Route>
 
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
+        <ToggleTheme />
         <ScrollToTop />
         <GlobalStyle />
       </ThemeProvider>

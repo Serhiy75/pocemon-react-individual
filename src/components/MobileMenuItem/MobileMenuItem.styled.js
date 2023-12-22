@@ -36,13 +36,13 @@ export const Container = styled.div`
 
 export const StyledLink = styled(Link)`
   font-size: 18px;
-  padding: 16px 0;
+  padding: 16px 10px;
   display: block;
   color: white;
 `;
 
 export const Line = styled.div`
-  width: 90%;
+  width: 100%;
   height: 1px;
   background-color: grey;
   animation: 0.5s ${shrink} forwards;

@@ -9,6 +9,8 @@ export const Container = styled.div`
   align-items: center;
   cursor: pointer;
   padding: 4px;
+  position: ${({ open }) => (open ? 'absolute' : 'static')};
+  right: 10px;
 `;
 
 export const Line = styled.div`

@@ -4,6 +4,7 @@ import { Timer } from 'components/Timer';
 import { VelcomImage } from 'components/VelcomImage/VelcomImage';
 import { StyledHome } from './Home.styled';
 import { CastomCalendar } from 'components/CastomCalendar/CastomCalendar';
+import { MediaQuery } from 'components/MediaQuery/MediaQuery';
 
 const Home = () => {
   return (
@@ -11,7 +12,9 @@ const Home = () => {
     <StyledHome>
       <VelcomImage />
       <Timer />
-      <CastomCalendar />
+      <MediaQuery device="desktop">
+        <CastomCalendar />
+      </MediaQuery>
     </StyledHome>
     // </Section>
   );

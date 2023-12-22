@@ -3,6 +3,12 @@ import { GiNightSky } from 'react-icons/gi';
 import { FaRegLightbulb } from 'react-icons/fa6';
 import ReactSwitch from 'react-switch';
 
+export const Container = styled.div`
+  position: absolute;
+  bottom: 20px;
+  right: 50px;
+`;
+
 export const ReactSwitchStyled = styled(ReactSwitch)`
   & .react-switch-bg {
     background-color: ${({ theme }) => theme.colors.switch} !important;

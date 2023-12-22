@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import {
+  Container,
   FaRegLightbulbStyled,
   GiNightSkyStyled,
   ReactSwitchStyled,
@@ -10,7 +11,7 @@ export const ToggleTheme = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <div>
+    <Container>
       <ReactSwitchStyled
         className="reactSwitch"
         uncheckedHandleIcon={<FaRegLightbulbStyled />}
@@ -20,6 +21,6 @@ export const ToggleTheme = () => {
         onChange={toggleTheme}
         checked={theme === 'dark'}
       />
-    </div>
+    </Container>
   );
 };
