@@ -1,9 +1,8 @@
 {
   "files": {
-    "main.css": "/pocemon-react-individual/static/css/main.cfc80781.css",
-    "main.js": "/pocemon-react-individual/static/js/main.8cdc40d1.js",
-    "static/css/680.85ab7e87.chunk.css": "/pocemon-react-individual/static/css/680.85ab7e87.chunk.css",
-    "static/js/680.18039f5d.chunk.js": "/pocemon-react-individual/static/js/680.18039f5d.chunk.js",
+    "main.css": "/pocemon-react-individual/static/css/main.3aa18476.css",
+    "main.js": "/pocemon-react-individual/static/js/main.f8948728.js",
+    "static/js/605.92603532.chunk.js": "/pocemon-react-individual/static/js/605.92603532.chunk.js",
     "static/css/651.a2c16d33.chunk.css": "/pocemon-react-individual/static/css/651.a2c16d33.chunk.css",
     "static/js/651.c9e64eaf.chunk.js": "/pocemon-react-individual/static/js/651.c9e64eaf.chunk.js",
     "static/js/608.0c29e02b.chunk.js": "/pocemon-react-individual/static/js/608.0c29e02b.chunk.js",
@@ -23,9 +22,8 @@
     "static/js/126.ab7a4f4a.chunk.js": "/pocemon-react-individual/static/js/126.ab7a4f4a.chunk.js",
     "static/js/881.dc44f5d4.chunk.js": "/pocemon-react-individual/static/js/881.dc44f5d4.chunk.js",
     "static/js/686.fcaf303a.chunk.js": "/pocemon-react-individual/static/js/686.fcaf303a.chunk.js",
-    "static/js/162.821eb43b.chunk.js": "/pocemon-react-individual/static/js/162.821eb43b.chunk.js",
-    "static/js/439.c13a4c27.chunk.js": "/pocemon-react-individual/static/js/439.c13a4c27.chunk.js",
-    "static/js/25.4f5e6ff0.chunk.js": "/pocemon-react-individual/static/js/25.4f5e6ff0.chunk.js",
+    "static/js/162.f3eb350a.chunk.js": "/pocemon-react-individual/static/js/162.f3eb350a.chunk.js",
+    "static/js/439.3e93dc20.chunk.js": "/pocemon-react-individual/static/js/439.3e93dc20.chunk.js",
     "static/js/559.0e85f49e.chunk.js": "/pocemon-react-individual/static/js/559.0e85f49e.chunk.js",
     "static/media/man-pointing-up.jpg": "/pocemon-react-individual/static/media/man-pointing-up.2fd16502a234540b95c0.jpg",
     "static/media/pulp-fiction-john-travolta.gif": "/pocemon-react-individual/static/media/pulp-fiction-john-travolta.59b46f4510af6cc07976.gif",
@@ -33,10 +31,9 @@
     "static/media/welcome-to-the-family.gif": "/pocemon-react-individual/static/media/welcome-to-the-family.844fc77d9c57cfa672bb.gif",
     "index.html": "/pocemon-react-individual/index.html",
     "static/media/heart.svg": "/pocemon-react-individual/static/media/heart.bb77324c5ab750c4c07b5e7ed081203e.svg",
-    "main.cfc80781.css.map": "/pocemon-react-individual/static/css/main.cfc80781.css.map",
-    "main.8cdc40d1.js.map": "/pocemon-react-individual/static/js/main.8cdc40d1.js.map",
-    "680.85ab7e87.chunk.css.map": "/pocemon-react-individual/static/css/680.85ab7e87.chunk.css.map",
-    "680.18039f5d.chunk.js.map": "/pocemon-react-individual/static/js/680.18039f5d.chunk.js.map",
+    "main.3aa18476.css.map": "/pocemon-react-individual/static/css/main.3aa18476.css.map",
+    "main.f8948728.js.map": "/pocemon-react-individual/static/js/main.f8948728.js.map",
+    "605.92603532.chunk.js.map": "/pocemon-react-individual/static/js/605.92603532.chunk.js.map",
     "651.a2c16d33.chunk.css.map": "/pocemon-react-individual/static/css/651.a2c16d33.chunk.css.map",
     "651.c9e64eaf.chunk.js.map": "/pocemon-react-individual/static/js/651.c9e64eaf.chunk.js.map",
     "608.0c29e02b.chunk.js.map": "/pocemon-react-individual/static/js/608.0c29e02b.chunk.js.map",
@@ -56,13 +53,12 @@
     "126.ab7a4f4a.chunk.js.map": "/pocemon-react-individual/static/js/126.ab7a4f4a.chunk.js.map",
     "881.dc44f5d4.chunk.js.map": "/pocemon-react-individual/static/js/881.dc44f5d4.chunk.js.map",
     "686.fcaf303a.chunk.js.map": "/pocemon-react-individual/static/js/686.fcaf303a.chunk.js.map",
-    "162.821eb43b.chunk.js.map": "/pocemon-react-individual/static/js/162.821eb43b.chunk.js.map",
-    "439.c13a4c27.chunk.js.map": "/pocemon-react-individual/static/js/439.c13a4c27.chunk.js.map",
-    "25.4f5e6ff0.chunk.js.map": "/pocemon-react-individual/static/js/25.4f5e6ff0.chunk.js.map",
+    "162.f3eb350a.chunk.js.map": "/pocemon-react-individual/static/js/162.f3eb350a.chunk.js.map",
+    "439.3e93dc20.chunk.js.map": "/pocemon-react-individual/static/js/439.3e93dc20.chunk.js.map",
     "559.0e85f49e.chunk.js.map": "/pocemon-react-individual/static/js/559.0e85f49e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cfc80781.css",
-    "static/js/main.8cdc40d1.js"
+    "static/css/main.3aa18476.css",
+    "static/js/main.f8948728.js"
   ]
 }
